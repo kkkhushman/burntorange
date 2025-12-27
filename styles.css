@@ -369,12 +369,10 @@ em {
 }
 
 .typewriter-text .bold {
-    font-family: var(--font-body);
     font-weight: 700;
 }
 
 .typewriter-text .italic {
-    font-family: var(--font-display);
     font-style: italic;
 }
 

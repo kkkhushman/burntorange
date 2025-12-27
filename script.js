@@ -21,7 +21,7 @@ function initTypewriter() {
     
     const messages = [
         { text: '<span class="bold">we make</span> <span class="italic">epic</span> <span class="bold">shit</span>', hold: 2000 },
-        { text: '<span class="bold">wanna see?</span> <span class="italic">scroll down</span>', hold: 3000 }
+        { text: '<span class="bold">curious?</span> <span class="italic">scroll down</span>', hold: 3000 }
     ];
     
     const typeSpeed = 80;
