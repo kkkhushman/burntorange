@@ -20,8 +20,8 @@ function initTypewriter() {
     if (!textElement) return;
     
     const messages = [
-        { text: 'we make <span class="epic">epic</span> shit', hold: 2000 },
-        { text: 'yeah, you need to scroll down', hold: 3000 }
+        { text: '<span class="bold">we make</span> <span class="italic">epic</span> <span class="bold">shit</span>', hold: 2000 },
+        { text: '<span class="bold">wanna see?</span> <span class="italic">scroll down</span>', hold: 3000 }
     ];
     
     const typeSpeed = 80;
@@ -33,33 +33,100 @@ function initTypewriter() {
     }
     
     async function typeText(html) {
-        // Parse the HTML to handle the epic span
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = html;
-        const plainText = tempDiv.textContent;
+        // Parse spans from HTML
+        const spans = [];
+        const spanRegex = /<span class="([^"]+)">([^<]+)<\/span>/g;
+        let match;
+        let plainText = html;
         
-        let currentHtml = '';
-        let i = 0;
+        while ((match = spanRegex.exec(html)) !== null) {
+            spans.push({ class: match[1], text: match[2], start: -1 });
+            plainText = plainText.replace(match[0], match[2]);
+        }
         
-        while (i < plainText.length) {
+        // Find positions of each span text
+        let searchPos = 0;
+        spans.forEach(span => {
+            const pos = plainText.indexOf(span.text, searchPos);
+            span.start = pos;
+            span.end = pos + span.text.length;
+            searchPos = span.end;
+        });
+        
+        let displayed = '';
+        
+        for (let i = 0; i < plainText.length; i++) {
             const char = plainText[i];
             
-            // Check if we're at the start of "epic"
-            if (plainText.substring(i, i + 4) === 'epic' && html.includes('<span class="epic">epic</span>')) {
-                currentHtml += '<span class="epic">';
-                for (let j = 0; j < 4; j++) {
-                    currentHtml = currentHtml.replace('</span>', '') + plainText[i + j];
-                    textElement.innerHTML = currentHtml + '</span>';
-                    await sleep(typeSpeed);
+            // Check if this character is inside a styled span
+            let inSpan = null;
+            for (const span of spans) {
+                if (i >= span.start && i < span.end) {
+                    inSpan = span;
+                    break;
                 }
-                currentHtml += '</span>';
-                i += 4;
-            } else {
-                currentHtml += char;
-                textElement.innerHTML = currentHtml;
-                await sleep(typeSpeed);
-                i++;
             }
+            
+            if (inSpan) {
+                // Build the styled version
+                const beforeSpan = plainText.substring(0, inSpan.start);
+                const typedInSpan = plainText.substring(inSpan.start, i + 1);
+                const afterText = '';
+                
+                let result = '';
+                let pos = 0;
+                
+                for (let j = 0; j <= i; j++) {
+                    let charInSpan = null;
+                    for (const s of spans) {
+                        if (j >= s.start && j < s.end) {
+                            charInSpan = s;
+                            break;
+                        }
+                    }
+                    
+                    if (charInSpan) {
+                        if (j === charInSpan.start) {
+                            result += `<span class="${charInSpan.class}">`;
+                        }
+                        result += plainText[j];
+                        if (j === charInSpan.end - 1 || j === i) {
+                            result += '</span>';
+                        }
+                    } else {
+                        result += plainText[j];
+                    }
+                }
+                
+                textElement.innerHTML = result;
+            } else {
+                // Rebuild with all spans up to current position
+                let result = '';
+                for (let j = 0; j <= i; j++) {
+                    let charInSpan = null;
+                    for (const s of spans) {
+                        if (j >= s.start && j < s.end) {
+                            charInSpan = s;
+                            break;
+                        }
+                    }
+                    
+                    if (charInSpan) {
+                        if (j === charInSpan.start) {
+                            result += `<span class="${charInSpan.class}">`;
+                        }
+                        result += plainText[j];
+                        if (j === charInSpan.end - 1) {
+                            result += '</span>';
+                        }
+                    } else {
+                        result += plainText[j];
+                    }
+                }
+                textElement.innerHTML = result;
+            }
+            
+            await sleep(typeSpeed);
         }
     }
     
