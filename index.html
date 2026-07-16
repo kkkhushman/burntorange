@@ -3,223 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burnt Orange | Premium Marketing Agency</title>
+    <title>Burnt Orange — Marketing Studio, Ahmedabad</title>
+    <meta name="description" content="Burnt Orange is a boutique marketing studio in Ahmedabad. Brand strategy, media production, social media and business planning for brands that refuse to blend in.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation - Hidden Initially -->
-    <nav class="nav nav-hidden">
-        <div class="nav-container">
-            <a href="#hero" class="logo">
-                <span class="logo-text">Burnt</span>
-                <span class="logo-accent">Orange</span>
+
+    <!-- Grain overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="logo" aria-label="Burnt Orange — home">
+                Burnt<em>Orange</em><span class="logo-dot">.</span>
             </a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="https://built.fund" target="_blank" class="nav-builtfund">
-                    <span class="bf-black">BUILT</span><span class="bf-orange">FUND</span>
-                </a>
-                <a href="#contact" class="nav-cta">Get in Touch</a>
+                <a href="#studio">Studio</a>
+                <a href="#partners">Partners</a>
+                <a href="#contact" class="nav-cta">Start a Project</a>
             </div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
+            <button class="menu-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section - Full Immersive -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <img src="hero.png" alt="Burnt Orange">
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <a href="#services">Services</a>
+        <a href="#studio">Studio</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Start a Project</a>
+        <div class="mobile-menu-meta">
+            <span>Ahmedabad, India</span>
+            <a href="mailto:workburntorange@gmail.com">workburntorange@gmail.com</a>
         </div>
-        <div class="hero-typewriter">
-            <span class="typewriter-text"></span><span class="typewriter-cursor">|</span>
-        </div>
-    </section>
+    </div>
 
-    <!-- Main Content - Revealed on Scroll -->
+    <!-- Hero -->
+    <header class="hero" id="hero">
+        <div class="hero-art reveal-load" style="--d:.4s" aria-hidden="true">
+            <img src="hero.png" alt="">
+        </div>
+        <div class="hero-meta">
+            <span class="hero-meta-item reveal-load" style="--d:.2s">Marketing Studio</span>
+            <span class="hero-meta-item reveal-load" style="--d:.35s">Ahmedabad, IN — 380051</span>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-line reveal-load" style="--d:.5s">We build brands</span>
+                <span class="hero-line reveal-load" style="--d:.65s">that <em class="rotator"><span id="rotator-word">ignite.</span><span class="caret" aria-hidden="true"></span></em></span>
+            </h1>
+            <p class="hero-sub reveal-load" style="--d:.85s">
+                A boutique marketing studio for ambitious businesses.
+                Strategy, story and craft — no cookie-cutter work, ever.
+            </p>
+        </div>
+        <a href="#services" class="hero-scroll reveal-load" style="--d:1.1s" aria-label="Scroll to services">
+            <span>Scroll</span>
+            <span class="hero-scroll-line" aria-hidden="true"></span>
+        </a>
+    </header>
+
     <main id="main">
 
     <!-- Marquee -->
-    <div class="marquee-section">
+    <div class="marquee-band" aria-hidden="true">
         <div class="marquee">
-            <div class="marquee-content">
-                <span>Brand Strategy</span>
-                <span class="marquee-dot">◆</span>
-                <span>Media Production</span>
-                <span class="marquee-dot">◆</span>
-                <span>Social Media</span>
-                <span class="marquee-dot">◆</span>
-                <span>Business Planning</span>
-                <span class="marquee-dot">◆</span>
-                <span>Creative Direction</span>
-                <span class="marquee-dot">◆</span>
-                <span>Brand Strategy</span>
-                <span class="marquee-dot">◆</span>
-                <span>Media Production</span>
-                <span class="marquee-dot">◆</span>
-                <span>Social Media</span>
-                <span class="marquee-dot">◆</span>
-                <span>Business Planning</span>
-                <span class="marquee-dot">◆</span>
-                <span>Creative Direction</span>
-                <span class="marquee-dot">◆</span>
+            <div class="marquee-track">
+                <span>Brand Strategy</span><span class="dot">✺</span>
+                <span>Media Production</span><span class="dot">✺</span>
+                <span>Social Media</span><span class="dot">✺</span>
+                <span>Business Planning</span><span class="dot">✺</span>
+                <span>Creative Direction</span><span class="dot">✺</span>
+                <span>Brand Strategy</span><span class="dot">✺</span>
+                <span>Media Production</span><span class="dot">✺</span>
+                <span>Social Media</span><span class="dot">✺</span>
+                <span>Business Planning</span><span class="dot">✺</span>
+                <span>Creative Direction</span><span class="dot">✺</span>
             </div>
         </div>
     </div>
 
-    <!-- Services Section -->
+    <!-- Services -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">What We Do</span>
-                <h2 class="section-title">
-                    Services designed to 
-                    <em>elevate</em> your brand
-                </h2>
+            <div class="section-head reveal">
+                <span class="label">01 — What We Do</span>
+                <h2 class="section-title">Services designed to <em>elevate</em> your brand</h2>
             </div>
-            <div class="services-grid">
-                <article class="service-card">
-                    <span class="service-number">01</span>
-                    <h3 class="service-title">Brand Strategy</h3>
-                    <p class="service-desc">
-                        We uncover the essence of your brand and craft a strategic 
-                        foundation that resonates with your audience and stands the test of time.
-                    </p>
-                    <ul class="service-list">
-                        <li>Brand Positioning</li>
-                        <li>Visual Identity</li>
-                        <li>Brand Guidelines</li>
-                    </ul>
+            <div class="service-list">
+                <article class="service reveal">
+                    <button class="service-head" aria-expanded="false">
+                        <span class="service-index">01</span>
+                        <h3 class="service-name">Brand Strategy</h3>
+                        <span class="service-toggle" aria-hidden="true"></span>
+                    </button>
+                    <div class="service-body">
+                        <div class="service-body-inner">
+                            <p>We uncover the essence of your brand and craft a strategic foundation that resonates with your audience — and stands the test of time.</p>
+                            <ul>
+                                <li>Brand Positioning</li>
+                                <li>Visual Identity</li>
+                                <li>Brand Guidelines</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
-                <article class="service-card">
-                    <span class="service-number">02</span>
-                    <h3 class="service-title">Business Planning</h3>
-                    <p class="service-desc">
-                        Strategic blueprints that transform vision into actionable 
-                        roadmaps, setting your business up for sustainable growth.
-                    </p>
-                    <ul class="service-list">
-                        <li>Market Analysis</li>
-                        <li>Growth Strategy</li>
-                        <li>Revenue Planning</li>
-                    </ul>
+                <article class="service reveal">
+                    <button class="service-head" aria-expanded="false">
+                        <span class="service-index">02</span>
+                        <h3 class="service-name">Business Planning</h3>
+                        <span class="service-toggle" aria-hidden="true"></span>
+                    </button>
+                    <div class="service-body">
+                        <div class="service-body-inner">
+                            <p>Strategic blueprints that transform vision into actionable roadmaps, setting your business up for sustainable growth.</p>
+                            <ul>
+                                <li>Market Analysis</li>
+                                <li>Growth Strategy</li>
+                                <li>Revenue Planning</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
-                <article class="service-card">
-                    <span class="service-number">03</span>
-                    <h3 class="service-title">Media Production</h3>
-                    <p class="service-desc">
-                        Cinematic storytelling that captures attention and communicates 
-                        your brand's narrative with visual excellence.
-                    </p>
-                    <ul class="service-list">
-                        <li>Video Production</li>
-                        <li>Photography</li>
-                        <li>Motion Graphics</li>
-                    </ul>
+                <article class="service reveal">
+                    <button class="service-head" aria-expanded="false">
+                        <span class="service-index">03</span>
+                        <h3 class="service-name">Media Production</h3>
+                        <span class="service-toggle" aria-hidden="true"></span>
+                    </button>
+                    <div class="service-body">
+                        <div class="service-body-inner">
+                            <p>Cinematic storytelling that captures attention and communicates your brand's narrative with visual excellence.</p>
+                            <ul>
+                                <li>Video Production</li>
+                                <li>Photography</li>
+                                <li>Motion Graphics</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
-                <article class="service-card">
-                    <span class="service-number">04</span>
-                    <h3 class="service-title">Social Media</h3>
-                    <p class="service-desc">
-                        Curated digital presence that builds community, drives engagement, 
-                        and converts followers into loyal advocates.
-                    </p>
-                    <ul class="service-list">
-                        <li>Content Strategy</li>
-                        <li>Community Management</li>
-                        <li>Paid Campaigns</li>
-                    </ul>
+                <article class="service reveal">
+                    <button class="service-head" aria-expanded="false">
+                        <span class="service-index">04</span>
+                        <h3 class="service-name">Social Media</h3>
+                        <span class="service-toggle" aria-hidden="true"></span>
+                    </button>
+                    <div class="service-body">
+                        <div class="service-body-inner">
+                            <p>Curated digital presence that builds community, drives engagement, and converts followers into loyal advocates.</p>
+                            <ul>
+                                <li>Content Strategy</li>
+                                <li>Community Management</li>
+                                <li>Paid Campaigns</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- Studio / About -->
+    <section class="studio" id="studio">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <span class="section-label">About Us</span>
-                    <h2 class="about-title">
-                        We believe in the power of 
-                        <em>authentic</em> storytelling
-                    </h2>
-                    <p class="about-text">
-                        Burnt Orange was founded on a simple belief: every brand has a 
-                        unique story worth telling. We partner with ambitious businesses 
-                        to uncover that story and share it with the world in ways that 
+            <div class="studio-grid">
+                <div class="studio-content reveal">
+                    <span class="label">02 — The Studio</span>
+                    <h2 class="section-title">Bold ideas, built in <em>Ahmedabad</em></h2>
+                    <p>
+                        Burnt Orange was founded on a simple belief: every brand has a
+                        unique story worth telling. We partner with ambitious businesses
+                        to uncover that story and share it with the world in ways that
                         captivate, inspire, and convert.
                     </p>
-                    <p class="about-text">
-                        Our boutique approach means you work directly with senior 
-                        strategists who are invested in your success. No junior handoffs. 
-                        No cookie-cutter solutions. Just thoughtful, bespoke work that 
+                    <p>
+                        Our boutique approach means you work directly with the partners —
+                        senior strategists invested in your success. No junior handoffs.
+                        No cookie-cutter solutions. Just thoughtful, bespoke work that
                         makes an impact.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Brands Transformed</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">8</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Client Retention</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="about-visual">
-                    <div class="about-image">
-                        <img src="p1.png" alt="Burnt Orange Team">
+                <div class="studio-stats reveal">
+                    <div class="stat">
+                        <span class="stat-number" data-count="10" data-suffix="+">10+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="8">8</span>
+                        <span class="stat-label">Years of Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100" data-suffix="%">100%</span>
+                        <span class="stat-label">Client Retention</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Philosophy Section -->
-    <section class="philosophy">
+    <!-- Quote band -->
+    <section class="quote-band">
         <div class="container">
-            <blockquote class="philosophy-quote">
-                <span class="quote-mark">"</span>
+            <blockquote class="reveal">
                 <p>
-                    Great brands don't just sell products—they 
-                    <span class="highlight">ignite movements</span>, 
-                    create culture, and leave lasting impressions.
+                    Great brands don't just sell products — they
+                    <em>ignite movements</em>, create culture,
+                    and leave lasting impressions.
                 </p>
             </blockquote>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Partners -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="label label-light">03 — The Partners</span>
+                <h2 class="section-title">Three minds, <em>one flame</em></h2>
+                <p class="section-sub">
+                    Every project at Burnt Orange is led hands-on by the people
+                    whose names are on the door.
+                </p>
+            </div>
+            <div class="partners-grid">
+                <article class="partner reveal">
+                    <div class="partner-photo">
+                        <span class="partner-initials" aria-hidden="true">AM</span>
+                        <img src="apurva.jpeg" alt="Apurva Mahanot" onerror="this.remove()">
+                    </div>
+                    <h3 class="partner-name">Apurva Mahanot</h3>
+                    <span class="partner-role">Partner &amp; Co-founder</span>
+                </article>
+                <article class="partner reveal">
+                    <div class="partner-photo">
+                        <span class="partner-initials" aria-hidden="true">KS</span>
+                        <img src="khushman.png" alt="Khushman Sancheti" onerror="this.remove()">
+                    </div>
+                    <h3 class="partner-name">Khushman Sancheti</h3>
+                    <span class="partner-role">Partner &amp; Co-founder</span>
+                </article>
+                <article class="partner reveal">
+                    <div class="partner-photo">
+                        <span class="partner-initials" aria-hidden="true">SC</span>
+                        <img src="sachin.png" alt="Sachin Chaudhary" onerror="this.remove()">
+                    </div>
+                    <h3 class="partner-name">Sachin Chaudhary</h3>
+                    <span class="partner-role">Partner &amp; Co-founder</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-content">
-                    <span class="section-label">Let's Connect</span>
-                    <h2 class="contact-title">
-                        Ready to set your 
-                        <em>brand ablaze?</em>
-                    </h2>
-                    <p class="contact-text">
-                        We're selective about the projects we take on because we believe 
-                        in giving each client our complete focus. If you're ready to invest 
-                        in your brand's future, we'd love to hear from you.
-                    </p>
-                    <div class="contact-info">
-                        <a href="mailto:workburntorange@gmail.com" class="contact-link">
-                            workburntorange@gmail.com
-                        </a>
-                    </div>
+            <div class="section-head reveal">
+                <span class="label">04 — Let's Connect</span>
+                <h2 class="section-title">Ready to set your brand <em>ablaze?</em></h2>
+                <p class="section-sub">
+                    We're selective about the projects we take on, because we believe in
+                    giving each client our complete focus. If you're ready to invest in
+                    your brand's future, we'd love to hear from you.
+                </p>
+            </div>
+            <a href="mailto:workburntorange@gmail.com" class="contact-email reveal">
+                workburntorange@gmail.com<span class="contact-arrow" aria-hidden="true">→</span>
+            </a>
+            <div class="contact-grid reveal">
+                <div class="contact-block">
+                    <h4>Visit</h4>
+                    <a href="https://maps.google.com/?q=B/110,+Sun+South+Street,+South+Bopal,+Ahmedabad,+Gujarat+380051" target="_blank" rel="noopener">
+                        B/110, Sun South Street,<br>
+                        South Bopal, Ahmedabad,<br>
+                        Gujarat, India — 380051
+                    </a>
+                </div>
+                <div class="contact-block">
+                    <h4>Write</h4>
+                    <a href="mailto:workburntorange@gmail.com">workburntorange@gmail.com</a>
+                </div>
+                <div class="contact-block">
+                    <h4>Follow</h4>
+                    <a href="https://www.linkedin.com/company/theburntorange/" target="_blank" rel="noopener">LinkedIn ↗</a>
                 </div>
             </div>
         </div>
@@ -230,31 +302,38 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <span class="logo-text">Burnt</span>
-                        <span class="logo-accent">Orange</span>
+                    <a href="#hero" class="logo logo-light">
+                        Burnt<em>Orange</em><span class="logo-dot">.</span>
                     </a>
-                    <p class="footer-tagline">Marketing, refined.</p>
+                    <p class="footer-tagline">we make epic shit.</p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
+                <div class="footer-cols">
+                    <div class="footer-col">
                         <h4>Navigate</h4>
                         <a href="#services">Services</a>
-                        <a href="#about">About</a>
+                        <a href="#studio">Studio</a>
+                        <a href="#partners">Partners</a>
                         <a href="#contact">Contact</a>
                     </div>
-                    <div class="footer-column">
+                    <div class="footer-col">
                         <h4>Follow</h4>
-                        <a href="#">Instagram</a>
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
+                        <a href="https://www.linkedin.com/company/theburntorange/" target="_blank" rel="noopener">LinkedIn</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Find Us</h4>
+                        <address>
+                            B/110, Sun South Street,<br>
+                            South Bopal, Ahmedabad,<br>
+                            Gujarat, India — 380051
+                        </address>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 Burnt Orange. All rights reserved.</p>
+                <p>© 2026 Burnt Orange. All rights reserved.</p>
+                <p>Made with fire in Ahmedabad 🔥</p>
             </div>
         </div>
     </footer>
@@ -262,4 +341,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
